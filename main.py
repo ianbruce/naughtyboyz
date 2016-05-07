@@ -13,7 +13,7 @@ def min_cut(pair, in_same_patrol):
 		return data[x][y] + data[y][x]
 	else:
 		return 0
-		
+
 # this function assumes that the partitions are disjoint, no
 # check for this has been implemented
 def calculate_loss(partition, objective):
@@ -24,8 +24,6 @@ def calculate_loss(partition, objective):
 		return ans
 	total = ()			# total will include every element in the
 	loss = 0			# partitions
-	total = ()
-	loss = 0
 	for part in partition:
 		total += part
 	every_pair = itertools.combinations(total, 2)
