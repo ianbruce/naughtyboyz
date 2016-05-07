@@ -10,7 +10,8 @@ def calculate_loss(partition, objective):
 	def compare_pair(pair):
 		ans = False
 		for part in partition:
-			return ans or (pair[0] in part and pair[1] in part)
+			ans = ans or (pair[0] in part and pair[1] in part)
+		return ans
 	total = ()			# find all the 
 	loss = 0
 	for part in partition:
@@ -19,5 +20,3 @@ def calculate_loss(partition, objective):
 	for pair in every_pair:
 		loss += objective(pair, compare_pair(pair))
 	return loss
-
-calculate_loss()
