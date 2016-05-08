@@ -14,14 +14,16 @@ def min_cut(pair, in_same_patrol):
 	else:
 		return 0
 
+# this function assumes that the partitions are disjoint, no
+# check for this has been implemented
 def calculate_loss(partition, objective):
-	def compare_pair(pair):
-		ans = False
+	def compare_pair(pair): # returns true if pair is in the same partition,
+		ans = False         # false otherwise
 		for part in partition:
 			ans = ans or (pair[0] in part and pair[1] in part)
 		return ans
-	total = ()
-	loss = 0
+	total = ()			# total will include every element in the
+	loss = 0			# partitions
 	for part in partition:
 		total += tuple(part)
 	every_pair = itertools.combinations(total, 2)
