@@ -40,7 +40,7 @@ mutual enmity: 0
 def friendly_cut(pair, in_same_patrol):
 	x, y = pair
 	if in_same_patrol:
-		return -1.0 * max(0, data[x][y] + data[y][x])
+		return -1 * max(0, data[x][y] + data[y][x])
 	else:
 		return 0
 
@@ -70,7 +70,7 @@ Change in loss function:
 
 mutual friends: +2
 one like, one indifferent: +1
-one like, one dislike (same patrol): -1
+one like, one dislike (same patrol): +1
 one like, one dislike (different patrol): 0
 one dislike, one indifferent: -1 
 mutual enmity: -2
@@ -78,11 +78,15 @@ mutual enmity: -2
 def awkward_cut(pair, in_same_patrol):
 	x, y = pair
 	if in_same_patrol and data[x][y] == -data[y][x] and abs(data[x][y]) > 0:
-		return -1
+		return 1 
 	elif not in_same_patrol:
 		return max(-2, data[x][y] + data[y][x])
 	else:
 		return 0
+
+def hybrid_cut(pair, in_same_patrol):
+	return 0.5 * min_cut(pair, in_same_patrol) \
+		+ 0.5 * friendly_cut(pair, in_same_patrol)
 
 # this function assumes that the partitions are disjoint, no
 # check for this has been implemented
@@ -106,7 +110,9 @@ def brute_force_solver(d=data, num_patrols=2, objective=min_cut, min_patrol_size
 	best_partition_so_far = None
 	best_loss = float('inf')
 	for part in partitions:
-		if sum(part) >= min_patrol_size and sum(part) <= max_patrol_size:
+		if (sum(part) >= min_patrol_size and sum(part) <= max_patrol_size \
+			and not (part[3] and part[8]) and not(not(part[3] or part[8]))):
+			if any([3 in p and 8 in p for p in partitions]): print('hello')
 			patrols = [[] for i in range(num_patrols)]
 			for i in range(len(part)):
 				patrols[part[i]] += [i]
