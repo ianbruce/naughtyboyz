@@ -135,6 +135,6 @@ def generate_partitions(arr, patrols, num_scouts):
 Example use
 
 best_patrol, best_loss = brute_force_solver()
-print("Best patrol:", best_patrol)
-print("Loss:", best_loss)
+print "Best patrol:", best_patrol
+print "Loss:", best_loss
 '''
