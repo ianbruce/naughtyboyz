@@ -72,6 +72,9 @@ The solid arrow represents a preferred companion. For example, there is a solid 
 
 The Stirling number of the second kind provides the total possible ways to arrange any number of distinguishable objects to indistinguishable groups as long as any troop size is permitted and no possible empty troops. For the data in this project, the Stirling number of the second kind for 13 scouts into 2 troops is 4095. This number provides an upper bound on the possible arrangements for the specific problem tackled in this project.
 
+\section*{Previous Work}
+(Currently reading more on Max Flow-Min cut, K-means clustering, Graph clustering: http://www.sciencedirect.com/science/article/pii/S1574013707000020. We will talk about generating random solutions)
+
 \section*{Simplifications}
 Ultimately, our goal is to find groups for the scouts that will allow them to grow and be happy in the troop. If we really wanted to fully understand how a group can foster growth in an individual, we would want to consider the astronomical number of aspects about the personalities of each member and how those influence each of the other members given those other members’ astronomically complex personalities. Sociological and psychological literature would need to be studied extensively to learn about these aspects, and experts in the field would most likely be required to collect relevant data for each child, taking several weeks to conduct interviews. At the of the day, given our limited knowledge in this area, we settled with considering a subset of the sociological data between the scouts. We asked each scout which other scouts they liked and which ones they disliked. Now, this is obviously a giant simplification, but the difficulty of gathering more complex information and compiling said information would be too great for the expertise level of anyone involved in solving this problem. Also, this process of gathering data would have to be repeated each year for each new batch of new scouts, and would therefore be a burden on the Scoutmaster to collect a lot of data.
 
@@ -238,7 +241,7 @@ The other objective functions.
 \end{enumerate}
 
 \section*{Appendix B}
-The solution for finding the Stirling number of the second kinds for $n = 13$ scouts to be arranged in $k = 2$ troops:
+The solution for finding the Stirling number of the second kind for $n = 13$ scouts to be arranged in $k = 2$ troops:
 \begin{gather*}
 	S(n,k) = \frac{1}{k!} \sum_{i=0}^{k}(-1)^k {2 \choose i} (k - i)^{n} \\
 	S(13,2) = \frac{1}{2!} \sum_{i=0}^{2}(-1)^2 {2 \choose i} (2 - i)^{13} \\
