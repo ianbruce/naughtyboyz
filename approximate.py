@@ -1,5 +1,6 @@
 import numpy as np
 import itertools
+import pandas as pd
 
 def rand_affinity(n, probs):
 	return np.random.choice([-1,0,1], (n,n), p=probs)
@@ -17,7 +18,8 @@ def compute_sol(matrix):
 	def optimize_pair(part):
 		G = 1
 		Ds = [[diff(i, part) for i in range(len(part))] for j in range(1,3)] # Computes D's
-		return Ds
+		
+
 
 	# i - the index of the scout in question
 	# part - the partition scout i is a member of
