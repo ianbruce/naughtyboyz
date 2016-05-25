@@ -43,8 +43,6 @@
   }%
 }
 
-\pgfplotsset{compat=1.13}
-
 \begin{document}
 
 \title{Assigning Scouts to Optimal Patrols}
@@ -62,6 +60,17 @@ Every year the Scoutmaster must assign new scouts to groups called patrols. In t
 The data the Scoutmaster collects about adverse pairings and preferences are either privately given by the scouts themselves. Possibly destructive interactions are given by the parents. In the past, the Scoutmaster determined the perfect arrangement of patrols without too much time and effort due to the smaller number of new recruits. However, newer scouts are joining yearly to the point that solving this grouping problem cannot be done by hand in a reasonable time. Therefore, we can help our community partner find a better means to solve his troop organization problem. Our goal for this project is to assign boy scouts in different patrols of appropriate size (of 6-8 scouts) such that we maximize the retention rate of the scouts in the program by avoiding severe conflicts while maximizing positive relationships between scouts.
 
 We aim to answer the direct problem our community partner provided of arranging 13 scouts into two troops that avoids severe conflicts and promotes the positive relationships between the scouts. Furthermore, we want to determine if we can build a model to predict these patrol arrangements for any number of scouts so that the Scoutmaster can use this model for future years. Additionally, this model can possibly be applied to other situations in which arranging a number of people into groups where interpersonal dynamics is necessary and important such as project teams in a company and forming new military troops.
+
+\section*{Data}
+The 13 different recruited scouts are Brandon, Cameron, Christian, Colby, Daniel, Darwin, Evan, Jake, Jordan, Nathan, Patrick, Timmy and Tommy. After the Scoutmaster collected the likes and dislikes of each scout, he presented the data as follows: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.60]{graph}
+\end{figure}
+
+The solid arrow represents a preferred companion. For example, there is a solid arrow from Tommy pointing to Colby indicating that Tommy likes to be with Colby. A dashed arrow represents a dislike. For example, there is a dashed arrow from Tommy to Jordan showing that Tommy does not want to be with Jordan. Furthermore, the Scoutmaster provided us a separate email, and indicated that Colby and Jordan cannot be in the same troop. The highlighted arrows in the figure above does not mean anything new between the relationships of the boy scouts.
+
+The Stirling number of the second kind provides the total possible ways to arrange any number of distinguishable objects to indistinguishable groups as long as any troop size is permitted and no possible empty troops. For the data in this project, the Stirling number of the second kind for 13 scouts into 2 troops is 4095. This number provides an upper bound on the possible arrangements for the specific problem tackled in this project.
 
 \section*{Simplifications}
 Ultimately, our goal is to find groups for the scouts that will allow them to grow and be happy in the troop. If we really wanted to fully understand how a group can foster growth in an individual, we would want to consider the astronomical number of aspects about the personalities of each member and how those influence each of the other members given those other members’ astronomically complex personalities. Sociological and psychological literature would need to be studied extensively to learn about these aspects, and experts in the field would most likely be required to collect relevant data for each child, taking several weeks to conduct interviews. At the of the day, given our limited knowledge in this area, we settled with considering a subset of the sociological data between the scouts. We asked each scout which other scouts they liked and which ones they disliked. Now, this is obviously a giant simplification, but the difficulty of gathering more complex information and compiling said information would be too great for the expertise level of anyone involved in solving this problem. Also, this process of gathering data would have to be repeated each year for each new batch of new scouts, and would therefore be a burden on the Scoutmaster to collect a lot of data.
@@ -183,10 +192,6 @@ Let's take a more critical look at the optimal partition arrived at via MinCut:
 	\end{array}
 	\]
 \end{table}
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.60]{graph}
-\end{figure}
 
 \begin{enumerate}
 	\item Tommy and Timmy both like each other and are in separate patrols. But if we move Timmy to Patrol 1 ($P1$), we break up the mutual friendship of Timmy and Nathan in $P2$. Suppose we moved both Timmy and Nathan to $P1$ and Brandon (who dislikes Nathan) to $P2$. But then Brandon loses two friends (Tommy and Cameron), gains one (Jordan), and now neither Nathan nor Timmy are in the same patrol as Daniel, whom they both like. Although, Brandon and Tommy find themselves in the awkward situation of having complete opposite sentiments towards each other. Perhaps this would be a worthwhile trade after all (and a larger, negative weight needs to be placed upon disfavor-favor relationships).
@@ -232,6 +237,13 @@ The other objective functions.
     \end{equation*}
 \end{enumerate}
 
+\section*{Appendix B}
+The solution for finding the Stirling number of the second kinds for $n = 13$ scouts to be arranged in $k = 2$ troops:
+\begin{gather*}
+	S(n,k) = \frac{1}{k!} \sum_{i=0}^{k}(-1)^k {2 \choose i} (k - i)^{n} \\
+	S(13,2) = \frac{1}{2!} \sum_{i=0}^{2}(-1)^2 {2 \choose i} (2 - i)^{13} \\
+	S(13, 2) = 4095
+\end{gather*}
 
 \bibliographystyle{amsplain}
 \begin{thebibliography}{10}
@@ -362,12 +374,12 @@ While our algorithm demonstrably works well on smaller groups of 13 people, we d
 As scout enrollment increases, it becomes necessary to consider scenarios where we have both a large number of scouts in need of assignment and multiple patrols to choose from. Our algorithm could be extended to use brute force to find a globally optimal solution when it is deemed computationally feasible and to use an approximating algorithm to find a locally optimal solution otherwise. 
 
 \section*{Conclusions}
-We initially struggled to decide on determining an appropriate objective function to partition the scouts to different groups. Follow up interviews with Scoutmaster Gene Bruce allowed us to decide on this function. We learned to rely on his expertise and intuition rather than trying to blindly decide on which types of relationships should be fostered and avoided to weight our objective function. Thus, we learned necessary communication skills and consideration of our community partner's needs.
+We initially struggled deciding on an appropriate objective function to partition the scouts to different groups. Follow up interviews with Scoutmaster Gene Bruce allowed us to decide on this function. We relied on his expertise and intuition rather than trying to blindly decide on which types of relationships should be fostered and avoided to determine our objective function. Thus, we learned necessary communication skills and consideration of our community partner's needs.
 
-With a feasibility check of how many solutions possible once the mathematical model was decided using graphs, a brute force strategy was the most accessible method to arrive at a solution. Thus we were able to develop a program that can partition scouts using this strategy. We learned to utilize tools we have at hand right away, and then we can consider other methods later on to reduce the computational time of our algorithm.
+With a feasibility check of how many solutions possible once the mathematical model was decided using graphs, a brute force strategy was the most reliable method to arrive at a solution. Thus we were able to develop a program that can partition scouts using this strategy. We learned to utilize tools we have at hand. Further consideration of other methods later on to reduce the computational time of our algorithm.
 
 \section*{Acknowledgments}
-We would like to thank Scoutmaster Gene Bruce for providing us the necessary data and being extremely patient and understanding when discussing the background and problem. We would also like to thank Professor Sarah Billey for the mentorship and guidance she provided throughout this project, and our TA Austin Tran for his comments and suggestions. 
+We would like to thank Scoutmaster Gene Bruce for providing us the necessary data and being extremely patient and understanding when discussing the background and problem. We would also like to thank Professor Sara Billey for the mentorship and guidance she provided throughout this project, and our TA Austin Tran for his comments and suggestions. 
 
 \section*{Verification Statement}
 (Once we receive our verification statement, we will place it here.)
