@@ -65,7 +65,7 @@
 
 % If you have a file called "university-logo-filename.xxx", where xxx
 % is a graphic format that can be processed by latex or pdflatex,
-% resp., then you can add a logo as follows:
+% resp., then you can add a logo as follows:x
 
 % \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
 % \logo{\pgfuseimage{university-logo}}
@@ -79,8 +79,23 @@
 
 % Section and subsections will appear in the presentation overview
 % and table of contents.
-\begin{frame}{The Problem}%{Optional Subtitle}
-We need to do a project so we can pass this class.  
+\begin{frame}{Problem Description}%{Optional Subtitle}
+	\begin{itemize}
+		\item Scoutmaster Gene Bruce of Troop 407 in Kent, Washington must assign new boy scouts into their patrols. In these patrols, the scouts engage in numerous activities and form close bonds. \\
+		\vspace{0.2in}
+		\item The number of incoming scouts are increasing requiring multiple patrols to better organize activities and to form a small community between scouts.
+		The younger scouts are temperamental and awkward when dealing with adversity, ruining their experience and causing many to quit. \\
+		\vspace{0.2in}
+		\item \textbf{Goal:  Assign 13 boy scouts of appropriate size (of 6-8 scouts) to two patrols such that we maximize the retention rate of the scouts by avoiding severe conflicts and maximizing positive relationships between scouts.}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Simplifications}
+	\begin{itemize}
+		\item Instead of considering the scouts' complex personality and their interactions with other scouts, we simplified by only asking each scout which other scouts they liked or disliked.
+		
+		\item Add last simplification
+	\end{itemize}
 \end{frame}
 
 % You can reveal the parts of a slide one at a time
