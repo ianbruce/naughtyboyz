@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.7.1)  1 JUN 2016 12:26
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.19)  1 JUN 2016 12:25
+>>>>>>> origin/master
 entering extended mode
 **poster.tex
 (poster.tex
@@ -719,7 +723,13 @@ Package: beamercolorthemedolphin 2010/06/17  (rcs-revision d02a7cf4d8ae)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\themes\outer\beamerouterthe
 meinfolines.sty"
 Package: beamerouterthemeinfolines 2012/10/16  (rcs-revision 51a8c72084af)
+<<<<<<< HEAD
 )) (poster.aux)
+=======
+)) (./poster.aux)
+\openout1 = `poster.aux'.
+
+>>>>>>> origin/master
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
@@ -797,6 +807,13 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 74.
 LaTeX Info: Redefining \pageref on input line 74.
 LaTeX Info: Redefining \nameref on input line 74.
+<<<<<<< HEAD
+=======
+
+(./poster.out) (./poster.out)
+\@outlinefile=\write5
+\openout5 = `poster.out'.
+>>>>>>> origin/master
 
 (poster.out) (poster.out)
 \@outlinefile=\write5
@@ -878,7 +895,11 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Info: Redefining \includegraphics on input line 74.
+<<<<<<< HEAD
  (poster.nav)
+=======
+ (./poster.nav)
+>>>>>>> origin/master
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 78.
@@ -889,22 +910,27 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 ] [3
 
-] [4
-
-] [5
-
 ]
+<<<<<<< HEAD
 [6
+=======
+LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+>>>>>>> origin/master
 
 ]
 LaTeX Font Info:    Try loading font information for U+msa on input line 147.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for U+msb on input line 147.
+=======
+LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+>>>>>>> origin/master
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+<<<<<<< HEAD
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
 line 147.
@@ -914,19 +940,49 @@ File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
 [7
+=======
+) [4
+
+] [5
+
+]
+Overfull \vbox (11.48235pt too high) detected at line 170
+ []
+
+[6
+>>>>>>> origin/master
 
 ] [8
 
+<<<<<<< HEAD
  <C:/Program Files/MiKTeX 2.9/tex/latex/beamer/base/art/beamericonbook.pdf> <C:
 /Program Files/MiKTeX 2.9/tex/latex/beamer/base/art/beamericonarticle.pdf>]
+=======
+] [8
+
+] [9
+
+ </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonbook.pdf> </usr/
+share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
+>>>>>>> origin/master
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
+<<<<<<< HEAD
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
  (poster.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
+=======
+\openout8 = `poster.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 242.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
+ (./poster.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 242.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 242.
+>>>>>>> origin/master
 Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -934,6 +990,7 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+<<<<<<< HEAD
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
@@ -954,5 +1011,35 @@ Output written on poster.pdf (8 pages, 133233 bytes).
 PDF statistics:
  301 PDF objects out of 1000 (max. 8388607)
  23 named destinations out of 1000 (max. 500000)
+=======
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
+ ) 
+Here is how much of TeX's memory you used:
+ 16812 strings out of 494953
+ 325055 string characters out of 6180977
+ 396949 words of memory out of 5000000
+ 19679 multiletter control sequences out of 15000+600000
+ 13115 words of font info for 48 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 48i,20n,63p,386b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+am7.pfb>
+Output written on poster.pdf (9 pages, 152339 bytes).
+PDF statistics:
+ 363 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 25 named destinations out of 1000 (max. 500000)
+>>>>>>> origin/master
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
 
