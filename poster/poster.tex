@@ -11,7 +11,7 @@
 % notice. 
 
 \documentclass{beamer}
-
+\usepackage{graphicx}
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
 % http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
@@ -65,7 +65,7 @@
 
 % If you have a file called "university-logo-filename.xxx", where xxx
 % is a graphic format that can be processed by latex or pdflatex,
-% resp., then you can add a logo as follows:
+% resp., then you can add a logo as follows:x
 
 % \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
 % \logo{\pgfuseimage{university-logo}}
@@ -79,21 +79,114 @@
 
 % Section and subsections will appear in the presentation overview
 % and table of contents.
-\begin{frame}{The Problem}%{Optional Subtitle}
-We need to do a project so we can pass this class.  
+\begin{frame}{Problem Description}%{Optional Subtitle}
+	\begin{itemize}
+		\item Scoutmaster Gene Bruce of Troop 407 in Kent, Washington must assign new boy scouts into their patrols. In these patrols, the scouts engage in numerous activities and form close bonds. \\
+		\vspace{0.2in}
+		\item The number of incoming scouts are increasing requiring multiple patrols to better organize activities and to form a small community between scouts.
+		The younger scouts are temperamental and awkward when dealing with adversity, ruining their experience and causing many to quit. \\
+		\vspace{0.2in}
+		\item \textbf{Goal:  Assign 13 boy scouts of appropriate size (of 6-8 scouts) to two patrols such that we maximize the retention rate of the scouts by avoiding severe conflicts and maximizing positive relationships between scouts.}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Simplifications}
+	\begin{itemize}
+		\item Instead of considering the scouts' complex personality and their interactions with other scouts, we simplified by only asking each scout which other scouts they liked or disliked.
+		
+		\item Add last simplification
+	\end{itemize}
 \end{frame}
 
 % You can reveal the parts of a slide one at a time
 % with the \pause command:
 \begin{frame}{A Mathematical Interpretation - Let's Use Graphs!}
 \begin{definition}
-A \textbf{graph} is a group of objects called vertices where some of the vertices are linked together. When two vertices are linked, we say that there is an \textbf{edge} between them.
+A \textbf{graph} consists of a group of objects called vertices where some of the vertices are linked together. When two vertices are linked, we say that there is an \textbf{edge} between them. 
 \end{definition}
+Graphs are often visualized like this: 
+
 Let every scout be a vertex in a graph. Each edge 
 \end{frame}
 
+\begin{frame}{The Objective Functions}
+
+\begin{enumerate}
+\scriptsize
+\item \textbf{MinCut}. This is the traditional metric of a cut on a weighted graph and is the sum of the weights of the edges we would ``cut'' if we were to sever the edges between distinct patrols. More formally, for some partition $I, J$ $I \neq J$, the MinCut is defined as:
+$$
+MinCut(I, J) := \sum_{e = (i, j), i \in I, j \in J}^{} c(e)
+$$
+We want this to be as low as possible.
+\item \textbf{FriendCut}. This is the sum of the positive, or friendly edge weights within each patrol. That is, if $I_+ = \{e=(i,j) | i,j \in I, c(e)=1\}$ is the the set of edges in patrol $I$ with positive weight and $J_+ = \{e=(i,j) | i,j \in J, c(e)=1\}$ is the set of edges in patrol $J$ with positive weight, then (assuming all positive weights are 1):
+$$
+FriendCut(I, J) :=  |I_+ \cup J_+|
+$$
+We want this to be as high as possible.
+\item \textbf{EnemyCut}. This is similar to FriendCut, except we now measure the number of negative edges going from one scout to another within the same patrol. Let $I_- = \{e=(i,j) | i,j \in I, c(e)=-1\}$ be the the set of edges in patrol $I$ with negative weight and $J_- = \{e=(i,j) | i,j \in J, c(e)=-1\}$ be the set of edges in patrol $J$ with negative weight, then
+$$
+EnemyCut(I, J) := |I_- \cup J_-|
+$$
+    We want this to be as low as possible.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{enumerate}
+    \scriptsize
+        \setcounter{enumi}{3}
+\item \textbf{AwkwardCut (+i)}. Same in all respects to MinCut, except for an additional penalty of $i$ if there are two scouts, Scout A and Scout B, in the same patrol such that Scout A likes Scout B and Scout B dislikes Scout A.
+\begin{equation*}
+    \begin{split}
+        AwkwardCut&(I, J, i) := \Bigg[ \sum_{e = (k, j), k \in I, j \in J}^{} c(e) \Bigg] \\
+        &+ i * \left\vert{\{e_+ = (k,j), e_- = (j, k) : e_+, e_- \in I, c(e_+) = 1, c(e_-) = -1\}}\right\vert
+    \end{split}
+\end{equation*}
+
+\item \textbf{HybridCut}. A convex combination of MinCut and FriendCut, each with equal weight (that is, half the MinCut loss plus half the FriendCut loss).
+\begin{equation*}
+    HybridCut(I, J) := \frac{1}{2}MinCut(I, J) + \frac{1}{2}FriendCut(I, J)
+\end{equation*}
+\end{enumerate}
+\end{frame}
+
 \begin{frame}{Our Solution}
-Isolate unloved scouts to reinforce feelings of social helplessness.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{ |l|l|l|l|l|l| }
+\hline
+\multicolumn{2}{|c|}{\textbf{MinCut}} & \multicolumn{2}{|c|}{\textbf{FriendCut}} & \multicolumn{2}{|c|}{\textbf{EnemyCut}}\\
+\hline
+Patrol 1 & Patrol 2 & Patrol 1 & Patrol 2 & Patrol 1 & Patrol 2\\
+\hline
+Brandon & Christian & Brandon & Daniel & Brandon & Christian\\
+Cameron & Daniel & Cameron & Darwin & Cameron & Jake\\
+Colby & Jake & Christian & Jake & Colby & Jordan\\
+Darwin & Jordan & Colby & Jordan  & Daniel & Nathan\\
+Evan & Nathan & Evan & Nathan & Darwin & Patrick\\
+Tommy & Patrick & Tommy & Patrick & Evan & Timmy\\
+& Timmy & & Timmy & Tommy & \\
+\hline
+\multicolumn{6}{|c|}{\hphantom{1}} \\
+\hline
+\multicolumn{2}{|c|}{\textbf{AwkwardCut (+1)}} & \multicolumn{2}{|c|}{\textbf{AwkwardCut (+2)}} & \multicolumn{2}{|c|}{\textbf{HybridCut}} \\
+\hline
+Patrol 1 & Patrol 2 & Patrol 1 & Patrol 2 & Patrol 1 & Patrol 2\\
+\hline
+Brandon & Christian & Brandon & Cameron & Brandon & Christian\\
+Cameron & Daniel & Christian & Evan & Cameron & Daniel\\
+Colby & Jake & Daniel & Evan & Colby & Darwin\\
+Darwin & Jordan & Darwin & Nathan & Evan & Jake\\
+Evan & Nathan & Jake & Timmy & Timmy & Jordan\\
+Tommy & Patrick & Jordan & Tommy & Tommy & Nathan\\
+\hphantom{1} & Timmy & Patrick & \hphantom{1} & \hphantom{1} & Patrick\\
+\hline
+\end{tabular}
+\caption{The partitions arrived at by minimizing each objective function}
+\end{table}
+
 \end{frame}
 
 \begin{frame}{Blocks}
