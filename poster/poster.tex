@@ -137,9 +137,9 @@ With these definitions, we can define a graph where each scout is a vertex, and 
 \begin{frame}{A Mathematical Interpretation cont.}
 \begin{itemize}
 \item[]We have our graph, but how can we use it to divide the scouts into patrols? We can split up the vertices into groups that don't overlap, where this splitting is called a \textbf{partition}.
-\item[]Each group would correspond to a potential patrol.
-\item[]We can imagine that there are many different possible partitions for any graph, the question is about which is "best".
-\item[]If we can define some numerical measure of a partition that is best, we can try to \textbf{optimize} that measure of goodness, which manifests as minimizing or maximizing some function dependent on the partition, where we choose to maximize or minimize depending on the measure
+\item[]Each of these groups would correspond to a potential patrol.
+\item[]We can imagine that there would be many different possible ways to split a graph, the key question is figure out which is "best" for the scouts.
+\item[]If we could numerically measure the the "goodness" of a partition, we would want pick the partition that has maximal "goodness". Likewise, if we could numerically measure the the "badness" of a partition, we would want pick the partition that has minimal "badness". This is the essential method of how to \textbf{optimize} things mathematically.
 \end{itemize}
 \end{frame}
 
