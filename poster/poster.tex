@@ -11,7 +11,6 @@
 % notice. 
 
 \documentclass{beamer}
-
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
 % http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
@@ -93,15 +92,55 @@
 \begin{frame}{Simplifications}
 	\begin{itemize}
 		\item Instead of considering the scouts' complex personality and their interactions with other scouts, we simplified by only asking each scout which other scouts they liked or disliked.
-		
-		\item Add last simplification
+		\vspace{0.5in}
+		\item Quality of the a patrol can be determined by the quality of the relationships between the unique pairs of the group. \\
+		\textbf{i.e.} the whole is equal to the sum of its parts.
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Acknowledgments}
+	We would like to sincerely thank:
+	\vspace{0.2in}
+	\begin{itemize}
+		\item \textbf{Scoutmaster Gene Bruce} for providing us the data and being extremely patient and understanding when discussing the background and problem.
+		\vspace{0.2in}
+		\item \textbf{Professor Sara Billey} for the mentorship and guidance throughout the entire project.
+		\vspace{0.2in}
+		\item \textbf{Austin Tran} for his helpful comments and suggestions.
+	\end{itemize}
+\end{frame}
 % You can reveal the parts of a slide one at a time
 % with the \pause command:
-\begin{frame}{A Mathematical Interpretation}
-1 enemy + 1 enemy = 0 survivors  
+\begin{frame}{A Mathematical Interpretation - Let's Use Graphs!}
+\begin{definition}
+A \textbf{graph} consists of a group of objects called vertices where some of the vertices are linked together. When two vertices are linked, we say that there is an \textbf{edge} between them. 
+\end{definition}
+Implied by the name, graphs have a very visual interpretation, with the following being a typical example of what one would look like:
+\begin{figure}
+\centering
+\includegraphics[scale=.1]{images/graph.png}
+\end{figure}
+The numbered circles represent vertices and the lines between them represent edges. We can model a wide variety of real-world things with graphs, namely any collection of objects where clear links can be drawn between pairs that share a relationship
+\end{frame}
+
+\begin{frame}{A Mathematical Interpretation cont.}
+To give a mathematical structure to the patrol problem, we will use what is called a weighted directed graph:
+\begin{definition}
+A graph is \textbf{directed} if edges only represent one way relationships from one vertex to another
+\end{definition}
+\begin{definition}
+A graph is \textbf{weighted} if a numerical value can be assigned to each edge
+\end{definition}
+With these definitions, we can define a graph where each scout is a vertex, and a directed edge from scout A to scout B is defined with weight 1 if scout A likes scout B, 0 if scout A is indifferent to B, and -1 if scout A dislikes scout B.
+\end{frame}
+
+\begin{frame}{A Mathematical Interpretation cont.}
+\begin{itemize}
+\item[]We have our graph, but how can we use it to divide the scouts into patrols? We can split up the vertices into groups that don't overlap, where this splitting is called a \textbf{partition}.
+\item[]Each group would correspond to a potential patrol.
+\item[]We can imagine that there are many different possible partitions for any graph, the question is about which is "best".
+\item[]If we can define some numerical measure of a partition that is best, we can try to \textbf{optimize} that measure of goodness, which manifests as minimizing or maximizing some function dependent on the partition, where we choose to maximize or minimize depending on the measure
+\end{itemize}
 \end{frame}
 
 \begin{frame}{The Objective Functions}
