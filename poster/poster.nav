@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+\beamer@endinputifotherversion {3.36pt}
+=======
 \beamer@endinputifotherversion {3.33pt}
+>>>>>>> 8b8746a8493ff674961df2fb96ce2b0affba78f4
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
@@ -17,6 +21,29 @@
 \headcommand {\beamer@framepages {8}{8}}
 \headcommand {\slideentry {0}{0}{9}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
+<<<<<<< HEAD
+\headcommand {\sectionentry {1}{Summary}{10}{Summary}{0}}
+\headcommand {\beamer@sectionpages {1}{9}}
+\headcommand {\beamer@subsectionpages {1}{9}}
+\headcommand {\slideentry {1}{0}{1}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\partentry {\translate {Appendix}}{1}}
+\headcommand {\beamer@partpages {1}{10}}
+\headcommand {\beamer@sectionpages {10}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\beamer@appendixpages {11}}
+\headcommand {\sectionentry {2}{\translate {Appendix}}{11}{\translate {Appendix}}{1}}
+\headcommand {\beamer@sectionpages {11}{10}}
+\headcommand {\beamer@subsectionpages {11}{10}}
+\headcommand {\beamer@subsectionentry {1}{2}{1}{11}{For Further Reading}}\headcommand {\beamer@subsectionpages {11}{10}}
+\headcommand {\slideentry {2}{1}{1}{11/11}{For Further Reading}{1}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@partpages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\beamer@sectionpages {11}{11}}
+\headcommand {\beamer@documentpages {11}}
+\headcommand {\def \inserttotalframenumber {11}}
+=======
 \headcommand {\slideentry {0}{0}{10}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\slideentry {0}{0}{11}{11/11}{}{0}}
@@ -44,3 +71,4 @@
 \headcommand {\beamer@sectionpages {14}{14}}
 \headcommand {\beamer@documentpages {14}}
 \headcommand {\def \inserttotalframenumber {14}}
+>>>>>>> 8b8746a8493ff674961df2fb96ce2b0affba78f4
