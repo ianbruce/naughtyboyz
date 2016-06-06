@@ -6,7 +6,7 @@ import networkx as nx
 def rand_affinity(n, probs):
 	return np.random.choice([-1,0,1], (n,n), p=probs)
 
-mat = rand_affinity(200, [.1, .7, .2])
+mat = rand_affinity(200, [.05, .8, .15]).astype(int)
 np.savetxt("test_mat.csv", mat, delimiter=",")
 
 # In this algorithm, we will represent partitions as incidence vectors, with 1
@@ -19,6 +19,7 @@ def compute_sol(matrix):
 	def optimize_pair(part):
 		G = 1
 		Ds = [[diff(i, part) for i in range(len(part))] for j in range(1,3)] # Computes D's
+		return Ds
 		
 	# i - the index of the scout in question
 	# part - the partition scout i is a member of
@@ -52,4 +53,4 @@ def compute_sol(matrix):
 
 	return optimize_pair([i for i in itertools.chain(itertools.repeat(1, 100), itertools.repeat(2, 100))])
 
-
+print(compute_sol(mat))

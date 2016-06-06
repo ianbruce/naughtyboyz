@@ -669,4 +669,87 @@ x)
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\
+\pgfdecoratedcompleteddistance=\dimen204
+\pgfdecoratedremainingdistance=\dimen205
+\pgfdecoratedinputsegmentcompleteddistance=\dimen206
+\pgfdecoratedinputsegmentremainingdistance=\dimen207
+\pgf@decorate@distancetomove=\dimen208
+\pgf@decorate@repeatstate=\count134
+\pgfdecorationsegmentamplitude=\dimen209
+\pgfdecorationsegmentlength=\dimen210
+)
+\tikz@lib@dec@box=\box44
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count135
+\pgfplots@xmin@reg=\dimen211
+\pgfplots@xmax@reg=\dimen212
+\pgfplots@ymin@reg=\dimen213
+\pgfplots@ymax@reg=\dimen214
+\pgfplots@zmin@reg=\dimen215
+\pgfplots@zmax@reg=\dimen216
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
+ks.code.tex
+File: pgflibraryplotmarks.code.tex 2013/07/20 v3.0.0 (rcs-revision 1.13)
+)))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip55
+\f@ncyO@elh=\skip56
+\f@ncyO@erh=\skip57
+\f@ncyO@olh=\skip58
+\f@ncyO@orh=\skip59
+\f@ncyO@elf=\skip60
+\f@ncyO@erf=\skip61
+\f@ncyO@olf=\skip62
+\f@ncyO@orf=\skip63
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen217
+\extrarowheight=\dimen218
+\NC@list=\toks51
+\extratabsurround=\skip64
+\backup@length=\skip65
+)
+\c@theorem=\count136
+
+
+./draft1.tex:46: Package pgfkeys Error: Choice '1.13' unknown in choice key '/p
+gfplots/compat/anchors'. I am going to ignore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \pgfplotsset{compat=1.13}
+                              
+? 
+./draft1.tex:46: Emergency stop.
+ ...                                              
+                                                  
+l.46 \pgfplotsset{compat=1.13}
+                              
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 24369 strings out of 493117
+ 584980 string characters out of 6135433
+ 796080 words of memory out of 5000000
+ 27260 multiletter control sequences out of 15000+600000
+ 5089 words of font info for 23 fonts, out of 8000000 for 9000
+ 1302 hyphenation exceptions out of 8191
+ 61i,0n,82p,3237b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+./draft1.tex:46:  ==> Fatal error occurred, no output PDF file produced!
