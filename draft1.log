@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 JUN 2016 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 JUN 2016 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -827,7 +827,7 @@ File: graph.jpg Graphic file (type jpg)
 Package pdftex.def Info: graph.jpg used on input line 74.
 (pdftex.def)             Requested size: 321.60397pt x 202.95981pt.
  [2 <./graph.jpg>]
-<data.jpg, id=19, 1185.42876pt x 501.875pt>
+[3] <data.jpg, id=24, 1185.42876pt x 501.875pt>
 File: data.jpg Graphic file (type jpg)
  <use data.jpg>
 Package pdftex.def Info: data.jpg used on input line 99.
@@ -836,21 +836,21 @@ Package pdftex.def Info: data.jpg used on input line 99.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] [4 <./data.jpg>] [5
+[4 <./data.jpg>] [5] [6
 
-] [6
+] [7
 
-] [7]
+] [8]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 251.
 
-[8] (./draft1.aux) ) 
+[9] (./draft1.aux) ) 
 Here is how much of TeX's memory you used:
  25112 strings out of 493117
  596456 string characters out of 6135433
- 809080 words of memory out of 5000000
+ 805080 words of memory out of 5000000
  27930 multiletter control sequences out of 15000+600000
  13248 words of font info for 56 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -868,10 +868,10 @@ mr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on draft1.pdf (8 pages, 411338 bytes).
+Output written on draft1.pdf (9 pages, 413416 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
