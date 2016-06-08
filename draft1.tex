@@ -17,7 +17,7 @@
 \usepackage{array}
 \usepackage{listings}
 \setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2in}
+\addtolength{\textwidth}{-3in}
 \calclayout
 
 \newtheorem{theorem}{Theorem}[section]
@@ -140,8 +140,6 @@ Tommy & Patrick & Jordan & Tommy & Tommy & Nathan\\
 \caption{The partitions arrived at by minimizing each objective function}
 \end{figure}
 
-\clearpage
-
 For each method we define three scoring metrics:
 
 \begin{enumerate}
@@ -180,8 +178,6 @@ The other methods are modifications of these three and are defined in Appendix A
     \end{tabular}
     \caption{The scores according to the three primary metrics.}
 \end{figure}
-
-\clearpage
 
 Of the objective functions we chose to use, it seems as though MinCut and HybridCut are the best performing. FriendCut performs almost as well as HybridCut, except for one worse in the EnemyCut objective. EnemyCut does poorly since finding a partition with 0 intra-patrol negative weight edges is easy in this example, and so EnemyCut settles for the first suboptimal (in terms of the other objective functions) solution it finds. AwkwardCut (+1) arrived at the same partition as MinCut (not altogether surprising, but informative, since even with the additional +1 penalty for placing Brandon and Tommy in the same patrol it decided it would be best off to do so anyways). But changing the ``awkward'' penalty to +2, the same penalty as mutual dislike in EnemyCut, we get a completely different partition.
 
@@ -251,10 +247,13 @@ The solution for finding the Stirling number of the second kind for $n = 13$ sco
 	S(13, 2) = 4095
 \end{gather*}
 
+\clearpage
+
 \section*{Appendix C}
 Scoutmaster Gene Bruce wanted to arrange 13 scouts into two groups where one group will have 6 scouts and the other will have 7 scouts. We can find the number of combinations possible of the 13 scouts into a troop size of 6 or 7 using the binomial coefficient.
 
-Let us first tackle a simpler problem to understand how to find the number of combinations. Suppose we have 4 people: A, B, C and D that we want to form groups of size 3 where the order of people does not matter. Then here are all the possible groups:
+Let us first tackle a simpler problem to understand how to find the number of combinations. Suppose we have 4 people: A, B, C and D that we want to form groups of size 3 where the order of people does not matter. The possible combinations are:
+
 \begin{itemize}
 	\item A,B,C	
 	\item A,B,D
@@ -294,6 +293,10 @@ Therefore the number of combinations possible for arranging 13 scouts into 6 or 
 \bibitem {E} Lin, Kevin. ``Air Force ROTC Cadet in the 910th Cadet Wing." \textit{Personal Communication}.
 
 \bibitem {F} Roberts, F., Tesman, B. ``Applied Combinatorics Second Edition." \textit{CRC Press}. 2009. Pp 54-55.
+
+\clearpage
+
+\section*{Code}
 
 \begin{lstlisting}
 from __future__ import print_function
